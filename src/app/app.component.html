@@ -1,0 +1,31 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h3>My CRUD APP</h3>
+    </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown" appDropdown>
+                    <a style="cursor:pointer; padding: 25px;" class="dropdown-toggle" role="button"><i class="nav-icon fa fa-bars"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a style="cursor:pointer" > Option1</a></li>
+                        <li><a style="cursor:pointer" > Option2</a></li>
+                    </ul>
+                </li>
+            </ul>
+  </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+          <img alt="Angular" src="assets/images/angular_image.jpg">
+            <hr>
+            <app-tasks #tasks (editTaskEvent)="addTasks.onEditEvent($event)"></app-tasks>
+            <app-add-tasks #addTasks (refreshTable)="tasks.getTasks()"></app-add-tasks>
+            <hr>
+        </div>
+    </div>
+</div>
+<div class="panel-footer"><p class="footer">Designed and coded with 
+    <i class="fa fa-heart"></i> 
+    by Patricia Arguello. 
+    </p></div>

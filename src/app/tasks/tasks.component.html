@@ -1,0 +1,23 @@
+<div *ngIf="tasks?.length > 0; else noTasks">
+  <table class="table table-bordered table-striped">
+    <tbody>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+    <tr *ngFor="let task of tasks">
+      <td>
+        <div>{{ task.title }}</div>
+      </td>
+      <td>
+        <div>{{ task.description }}</div>
+      </td>
+      <td><button class="btn btn-danger" (click)="deleteTask($event, task)"><i class="fa fa-trash"></i> Delete</button>
+      <button class="btn btn-primary" (click)="editTask($event, task)"><i class="fa fa-edit"></i> Update</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<ng-template #noTasks>
+  <div class="alert alert-info">There are not tasks yet</div>
+</ng-template>

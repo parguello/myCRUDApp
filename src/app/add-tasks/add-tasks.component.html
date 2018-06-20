@@ -1,0 +1,37 @@
+
+<button *ngIf="!displayAddMenu && !displayEditMenu" class="btn btn-primary" (click)="onDisplayAddMenu()">Add a new row</button>
+
+<div class="panel panel-default"  *ngIf="displayAddMenu || displayEditMenu">
+  <div class="panel-heading"><h4>{{title}}</h4></div>
+  <div class="panel-body">
+    <div class="alert alert-success" *ngIf="saveSuccess">
+    <strong>Success!</strong>
+    </div>
+
+    <form (ngSubmit)="onSubmit()">
+      <div class="row col-md-offset-1">
+        <div class="col-md-2">
+          <label>Title</label>
+        </div>
+
+        <div class="col-md-6">
+          <input type="text" name="title" placeholder="add title" [(ngModel)]="task.title">
+        </div>
+      </div>
+
+      <div class="row col-md-offset-1">
+        <div class="col-md-2">
+          <label>Description</label>
+        </div>
+        <div class="col-md-6">
+          <input type="text" name="description" placeholder="add description" [(ngModel)]="task.description">
+        </div>
+      </div>
+      <div class="col-md-offset-3" style="padding-top: 10px">
+        <input type="submit" class="btn btn-success">
+        <button class="btn btn-default" (click)="onAddCancel()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+

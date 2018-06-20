@@ -1,0 +1,26 @@
+h3{
+    color: white;
+}
+
+.navbar-default{
+    color: white!important;
+    background-color: black!important;
+}
+.footer{
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-icon{
+    float: right;
+    padding: 5px 10px;
+}
+
+.dropdown-toggle:focus {
+  outline: 0;
+}
